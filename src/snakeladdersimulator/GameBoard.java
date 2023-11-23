@@ -34,9 +34,9 @@ public class GameBoard {
         if (snakeAndLadder.containsKey(currentPosition)){
             int nextPosition = snakeAndLadder.get(currentPosition);
             if (nextPosition < currentPosition){
-                System.out.println();
+                System.out.println("Oops! You landed on a snake. Going back to position " + nextPosition + ".");
             }else {
-                System.out.println();
+                System.out.println("Congratulations! You found a ladder. Climbing to position " + nextPosition + ".");
             }
             return nextPosition;
         }
