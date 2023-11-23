@@ -10,9 +10,12 @@ public class SnakeAndLadder {
         Dice dice = new Dice();
         GameBoard board = new GameBoard();
 
+        int diceRollCount = 0;
+
         while (player.getCurrentPosition() < 100){
             int diceValue = dice.rollDice();
             int option = dice.rollOption();
+            diceRollCount++;
 
             switch (option){
                 case 1:
@@ -35,10 +38,10 @@ public class SnakeAndLadder {
                     player.setCurrentPosition(snakePosition);
                     break;
             }
+            
+            System.out.println("Congratulations! You reached the target position of 100");
+            System.out.println("Number of times the dice was played: " + diceRollCount);
 
-            if (player.getCurrentPosition() == 100) {
-                System.out.println("Congratulations! You reached the target position of 100");
-            }
         }
 
     }
