@@ -26,6 +26,9 @@ public class SnakeAndLadder {
                     break;
                 case 3:
                     int snakePosition = player.getCurrentPosition() - diceValue;
+                    if (snakePosition < 0) {
+                        snakePosition = 0;
+                    }
                     System.out.println("Oops! You rolled a snake. Going back to position " + snakePosition + ".");
                     player.setCurrentPosition(snakePosition);
                     break;
