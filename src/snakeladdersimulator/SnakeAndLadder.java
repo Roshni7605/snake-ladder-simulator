@@ -21,7 +21,9 @@ public class SnakeAndLadder {
                 case 2:
                     int newPosition = player.getCurrentPosition() + diceValue;
                     newPosition = board.movePlayerOnBoard(newPosition);
-                    player.setCurrentPosition(newPosition);
+                    if (newPosition <= 100) {
+                        player.setCurrentPosition(newPosition);
+                    }
                     System.out.println("You rolled a " + diceValue + ". Your current position is " + player.getCurrentPosition());
                     break;
                 case 3:
